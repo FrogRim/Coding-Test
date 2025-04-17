@@ -1,7 +1,7 @@
 N = int(input())
-i = 0
+i = 3
 
-while i < N:
-    i += 3
+while i <= N:
     print(i, end=' ')
+    i += 3
     
