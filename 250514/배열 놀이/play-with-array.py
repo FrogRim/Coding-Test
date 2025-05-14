@@ -2,7 +2,7 @@ a,b = map(int,input().split())
 
 elem = [int(i) for i in input().split()]
 
-idx = -1
+
 
 for _ in range(b):
     query = [int(i) for i in input().split()]
@@ -12,6 +12,7 @@ for _ in range(b):
 
     
     elif query[0] == 2:
+        idx = -1
         for i, char in enumerate(elem):
             if char == query[1]:
                 idx = i
