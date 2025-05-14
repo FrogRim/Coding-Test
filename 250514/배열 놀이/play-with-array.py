@@ -25,10 +25,8 @@ for _ in range(b):
     elif query[0] == 3:
         result = elem[(query[1]-1):(query[2])]
 
-        for k in result:
-            print(k,end=" ")
-        print()
-
+        print(*result)
+        
     
 
 
