@@ -1,13 +1,12 @@
 n = int(input())
-nums = list(map(int, input().split()))
+a = list(map(int, input().split()))
 
-# Please write your code here.
-min_val = -1
-for elem in nums[1:]:
-        if nums.count(elem) == 1:
-                if min_val < elem:
-                        min_val = elem
+max_val = -1
 
-print(f"{min_val}")
+for elem in a:
+    if a.count(elem) == 1:
+        if elem > max_val:
+            max_val = elem
 
+print(max_val)
 
