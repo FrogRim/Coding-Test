@@ -6,5 +6,8 @@ for temp in arr:
     if n == temp[-1]:
         result.append(temp)
 
-for k in result:
-    print(k)
+if len(result) == 0:
+    print("None")
+else:
+    for k in result:
+        print(k)
