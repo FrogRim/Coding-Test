@@ -7,7 +7,7 @@ for k in s:
         result.append(k)
 
 for i in result:
-    if k.isalpha() == True:
+    if i.isalpha() == True:
         print(i.lower(),end="")
     else:
         print(i,end="")
