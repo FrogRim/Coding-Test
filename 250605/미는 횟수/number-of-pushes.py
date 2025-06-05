@@ -4,7 +4,7 @@ b = input()
 
 
 for _ in range(len(a)-1):
-    b = b[-1]+b[:-1]
+    a = a[-1]+a[:-1]
     cnt += 1
     
     if b == a:
