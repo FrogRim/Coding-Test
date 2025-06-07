@@ -4,10 +4,10 @@ n, m = map(int, input().split())
 def print_rect(n,m):
     result1 = []
     result2 = []
-    for i in range(1,m):
+    for i in range(1,m+1):
         result1.append(n*i)
             
-    for i in range(1,n):
+    for i in range(1,n+1):
         result2.append(m*i)
           
     
