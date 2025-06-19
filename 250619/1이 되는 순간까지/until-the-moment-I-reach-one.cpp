@@ -11,11 +11,15 @@ int F(int n,int cnt) {
         return cnt;
     }
 
-    int remainder = n % 10;
-    if(remainder % 2 == 0)
+    
+    if(n % 2 == 0){
+       
         return F((n/2), cnt+1);
-    else
-        return F(n/3+(n%3),cnt+1);
+    }
+    else{
+        
+        return F(n/3,cnt+1);
+    }
 }
 
 int main() {
