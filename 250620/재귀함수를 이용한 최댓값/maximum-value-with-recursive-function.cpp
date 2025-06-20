@@ -8,13 +8,13 @@ int tmp = 0;
 
 int Maximaize(int n)
 {
-    if(n == 0)
-    {
-        return arr[n]; 
-    }
-    
-    return (Maximaize(n-1) < arr[n]) ? arr[n] : Maximaize(n-1);
+    if (n == 0)
+        return arr[0];
+
+    int prevMax = Maximaize(n - 1);
+    return (arr[n] > prevMax) ? arr[n] : prevMax;
 }
+
 
 int main() {
     cin >> n;
