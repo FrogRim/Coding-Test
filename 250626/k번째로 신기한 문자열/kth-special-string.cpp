@@ -22,9 +22,7 @@ int main() {
 
     for(int i = 0; i < n; i++)
     {
-      
-
-        if (str[i].find(t) != std::string::npos) {
+        if (str[i].find(t) == 0) {
             tmp.push_back(str[i]);
         }
         
