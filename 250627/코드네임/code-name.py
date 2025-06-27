@@ -22,7 +22,7 @@ for i in range(5):
     agents.append(Agent(tmp_name,tmp_score))
 
 
-agents.sort(key= lambda x: x.codename)
+agents.sort(key= lambda x: x.score)
 
 i = agents[0]
 print(f"{i.codename} {i.score}")
