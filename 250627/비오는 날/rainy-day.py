@@ -24,9 +24,15 @@ for i in range(n):
     tmp_weather = weather[i]
     weathers.append(Weather(tmp_date,tmp_day,tmp_weather))
 
+result = []
 
-weathers.sort(key= lambda x: x.weather)
+for w in weathers:
+    if(w.weather == "Rain"):
+        result.append(w)
 
-i = weathers[0]
+
+result.sort(key= lambda x: x.weather)
+
+i = result[0]
 print(f"{i.date} {i.day} {i.weather}")
 
