@@ -31,7 +31,7 @@ for w in weathers:
         result.append(w)
 
 
-result.sort(key= lambda x: x.weather)
+result.sort(key= lambda x: x.date)
 
 i = result[0]
 print(f"{i.date} {i.day} {i.weather}")
