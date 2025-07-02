@@ -1,56 +1,19 @@
 m1, d1, m2, d2 = map(int, input().split())
 
 # Please write your code here.
-days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+day_week = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 
 #                  1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12.
-#num_of_days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+num_of_days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-check = 0
+k = 0
 
-m = m1
-d = d1
-ma = m2
-da = d2
+w_l = num_of_days[m1:m2]
 
-if m1 < m2:
-    m = m1
-    d = d1
-    ma = m2
-    da = d2
+for i in w_l:
+    k += i
 
-elif m1> m2:
-    m = m2
-    d = d2
-    ma = m1
-    da = d1
+check = k + (d2 - d1)
 
-elif m1 == m2:
-    if d1 < d2:
-        m = m1
-        d = d1
-        ma = m2
-        da = d2
 
-    elif d1 > d2:
-        m = m2
-        d = d2
-        ma = m1
-        da = d1
-
-    else:
-        check = 1
-    
-if check == 0:
-        
-    while True:
-        if  m == ma and d == da:
-            print(days[(check % 7)-1])
-
-            break
-
-        d += 1
-        check +=1
-
-else:
-    print("Mon")
+print(day_week[check % 7])
