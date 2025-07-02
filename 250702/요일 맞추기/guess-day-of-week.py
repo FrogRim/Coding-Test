@@ -32,18 +32,25 @@ elif m1 == m2:
         ma = m2
         da = d2
 
-    elif d1> d2:
+    elif d1 > d2:
         m = m2
         d = d2
         ma = m1
         da = d1
 
-while True:
-    if  m == ma and d == da:
-        print(days[(check % 7)-1])
+    else:
+        check = 1
+    
+if check == 0:
+        
+    while True:
+        if  m == ma and d == da:
+            print(days[(check % 7)-1])
 
-        break
+            break
 
-    d += 1
-    check +=1
+        d += 1
+        check +=1
 
+else:
+    print("Mon")
