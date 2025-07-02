@@ -7,7 +7,7 @@ d = 11
 h = 11
 m = 11
 
-if b < 11 or (b == 11 and c < 11):
+if (a == 11 and b < 11) or (a == 11 and b == 11 and c < 11):
     print(-1)
 
 else:
