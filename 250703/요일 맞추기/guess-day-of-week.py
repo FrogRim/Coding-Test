@@ -31,5 +31,5 @@ while True:
             month += 1
             day = 1
 
-print(day_week[elapsed_days])
+print(day_week[elapsed_days % 7])
 #print(elapsed_days % 7)
