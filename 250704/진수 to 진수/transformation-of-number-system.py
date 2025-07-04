@@ -38,6 +38,6 @@ second = convert_b_to_a(first,b)
 num = 0
 
 for s in range(len(second)):
-    num += (10 ** s) * second[s]
+    num += (10 ** s) * second[i]
 
 print(num)
