@@ -35,6 +35,9 @@ def convert_b_to_a(n,k):
 first = convert_a_to_10(n,a)
 
 second = convert_b_to_a(first,b)
+num = 0
 
-for s in second[::-1]:
-        print(s, end="")
+for s in range(len(second)):
+    num += (10 ** s) * second[s]
+
+print(num)
