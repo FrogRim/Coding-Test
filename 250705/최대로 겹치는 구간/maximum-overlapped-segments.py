@@ -13,7 +13,7 @@ class Point:
 space = [Point(i,0) for i in range(-100,101)]
 
 for s in segments:
-    for k in range(s[0],s[1]+1):
+    for k in range(s[0],s[1]):
 
         space[100 + k].num += 1
 
