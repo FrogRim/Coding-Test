@@ -1,21 +1,24 @@
 def process_commands(velocity, times):
-    positions = [0]
+    # 각 시간마다 위치를 계산하여 누적 위치 리스트를 반환
+    positions = [0]  # 시작 위치는 0
     for vel, t in zip(velocity, times):
-        for _ in range(t):
+        for _ in range(t):  # 시간 단위로 반복
             positions.append(positions[-1] + vel)
     return positions
 
 def check(a, b):
+    # A와 B의 위치를 비교해서 누가 앞서는지 판단
     if a > b:
         return "a"
     elif a < b:
         return "b"
     else:
-        return "eq"
+        return "eq"  # 위치가 같으면 동률
 
+# 입력 받기
 n, m = map(int, input().split())
 
-# Process A's movements
+# A의 속도와 시간 정보 입력 받기
 v = []
 t = []
 for _ in range(n):
@@ -23,7 +26,7 @@ for _ in range(n):
     v.append(vi)
     t.append(ti)
 
-# Process B's movements
+# B의 속도와 시간 정보 입력 받기
 v2 = []
 t2 = []
 for _ in range(m):
@@ -31,35 +34,26 @@ for _ in range(m):
     v2.append(vi)
     t2.append(ti)
 
-positions_A = process_commands(v, t)[1:] 
+# A, B의 시간 단위 위치 계산
+positions_A = process_commands(v, t)[1:]  # 첫 위치 0 제외
 positions_B = process_commands(v2, t2)[1:]
 
-# 비교 리스트 만들기
+# A와 B 위치 비교하여 상태 리스트 생성
 status = []
 for a, b in zip(positions_A, positions_B):
     status.append(check(a, b))
 
-# 변화 횟수 세기
+# 선두 변경 횟수 계산
 result = 0
-prev_leader = None
-just_equal = False
+prev_leader = None  # 이전 선두 ("a" 또는 "b")
 
-for i in range(len(status)):
-    if status[i] == "eq":
-        just_equal = True
-        continue
-
-    if just_equal:
-        # eq 이후 처음으로 나타난 비슷지 않은 상태에서 비교
-        if status[i] != prev_leader:
-            result += 1
-        prev_leader = status[i]
-        just_equal = False
-    else:
-
-            
-        prev_leader = status[i]
+for s in status:
+    if s == "eq":
+        continue  # 동률이면 패스
+    if prev_leader is None:
+        prev_leader = s  # 첫 선두 설정
+    elif s != prev_leader:
+        result += 1  # 선두가 바뀌었으면 카운트
+        prev_leader = s  # 현재 선두를 저장
 
 print(result)
-
-# 만약 딱 한번만 순서가 바뀌는 경우는??
